@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yuanxueqi.dao.StudentDao">
+
+  <resultMap id="student" type="Student">
+    <result column="id" property="id"/>
+    <result column="name" property="name"/>
+    <result column="status" jdbcType="VARCHAR" property="status"/>
+  </resultMap>
+  <select id="select" parameterType="int" resultMap="student">
+    select id,name,status from student where id=#{id}
+  </select>
+
+  <insert id="insert" parameterType="Student" useGeneratedKeys="true" keyProperty="id">
+insert into student(name,status) values(#{name},#{status})
+</insert>
+
+  <update id="update" parameterType="Student">
+update student set status=#{status} where id =#{id}
+</update>
+
+  <delete id="delete" parameterType="int">
+delete from student where id=#{id}
+</delete>
+</mapper>

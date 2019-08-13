@@ -4,19 +4,19 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
   <typeAliases>
-    <typeAlias alias="Student" type="pojo.Student"/>
-    <typeAlias alias="Score" type="pojo.Score"/>
-    <typeAlias alias="Course" type="pojo.Course"/>
-    <typeAlias alias="StuCourScor" type="pojo.StuCourScor"/>
+    <typeAlias alias="Student" type="com.yuanxueqi.pojo.Student"/>
+    <typeAlias alias="Score" type="com.yuanxueqi.pojo.Score"/>
+    <typeAlias alias="Course" type="com.yuanxueqi.pojo.Course"/>
+    <typeAlias alias="StuCourScor" type="com.yuanxueqi.pojo.StuCourScor"/>
 
   </typeAliases>
 
 
   <mappers>
     <!-- SQL代码和映射信息配置文件 -->
-    <mapper resource="StudentMapper.xml"/>
-    <mapper resource="ScoreMapper.xml"/>
-    <mapper resource="CourseMapper.xml"/>
+    <mapper resource="mapper/StudentMapper.xml"/>
+    <mapper resource="mapper/ScoreMapper.xml"/>
+    <mapper resource="mapper/CourseMapper.xml"/>
   </mappers>
 
 </configuration>
